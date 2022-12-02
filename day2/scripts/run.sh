@@ -3,4 +3,4 @@
 set -e
 cd "$(dirname "$0")"/..
 
-< in/"$1$2.txt" sed -Enf code/part"$2".sed
+< in/"$1$2.txt" sed -Enf build/part"$2".sed

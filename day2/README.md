@@ -2,4 +2,6 @@
 
 Other implementation of sed may also suffice, but it’s tested only on GNU sed.
 
-Thanks to @Kolsky for the idea of replacing batches of newlines with digits.
+Thanks to [@Kolsky] for the idea of replacing batches of newlines with digits.
+
+[@Kolsky]: https://github.com/Kolsky
