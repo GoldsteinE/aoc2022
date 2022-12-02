@@ -1,0 +1,9 @@
+s/A X/\n\n/
+s/A Y/\n\n\n/
+s/A Z/\n\n\n\n\n\n\n/
+s/B X//
+s/B Y/\n\n\n\n/
+s/B Z/\n\n\n\n\n\n\n\n/
+s/C X/\n/
+s/C Y/\n\n\n\n\n/
+s/C Z/\n\n\n\n\n\n/

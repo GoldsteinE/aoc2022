@@ -14,6 +14,8 @@
           shellcheck
           # Day 1
           gawk
+          # Day 2
+          gnused
         ];
       };
     }
