@@ -16,6 +16,8 @@
           gawk
           # Day 2
           gnused
+          # Day 4
+          jq
         ];
       };
     }
