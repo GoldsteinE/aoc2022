@@ -1,4 +1,4 @@
-# Advent of Code 2022: 4/25 langs
+# Advent of Code 2022: 5/25 langs
 
 I’ll try to solve this Advent of Code using different language for each day.
 Any programs needed to run the code will be available via dev shell in the `flake.nix`.
@@ -11,6 +11,7 @@ Any programs needed to run the code will be available via dev shell in the `flak
 |  2  | GNU sed                  | [`./day2/`](/day2) |
 |  3  | Nix                      | [`./day3/`](/day3) |
 |  4  | jq                       | [`./day4/`](/day4) |
+|  5  | VimScript                | [`./day5/`](/day5) |
 
 ## `check.sh`
 

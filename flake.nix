@@ -18,6 +18,8 @@
           gnused
           # Day 4
           jq
+          # Day 5
+          neovim
         ];
       };
     }

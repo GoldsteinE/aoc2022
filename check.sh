@@ -38,7 +38,7 @@ check_day() {
 			if ! "$day"/scripts/run.sh "$mode" "$part" > "$tmp/out" 2>/dev/null ; then
 				overall_status=1
 				res="$FAIL"
-			elif ! cmp -s "$day/out/${mode}${part}.txt" "$tmp/out"; then
+			elif ! diff -Z "$day/out/${mode}${part}.txt" "$tmp/out" >/dev/null; then
 				overall_status=1
 				res="$FAIL"
 			else
