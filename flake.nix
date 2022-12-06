@@ -20,6 +20,8 @@
           jq
           # Day 5
           neovim
+          # Day 6
+          ripgrep
         ];
       };
     }
