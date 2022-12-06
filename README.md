@@ -18,6 +18,8 @@ Any programs needed to run the code will be available via dev shell in the `flak
 
 You can use `check.sh` script in the root directory of the repo to run all tests for one or every day.
 
+Working Rust installation is needed for this to work. Development shell in `flake.nix` provides one.
+
 ```
 $ ./check.sh      # Run all tests for every available day
 $ ./check.sh 2    # Run all tests for the second day
