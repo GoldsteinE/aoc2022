@@ -13,6 +13,7 @@ Any programs needed to run the code will be available via dev shell in the `flak
 |  4  | jq                       | [`./day4/`](/day4) |
 |  5  | VimScript                | [`./day5/`](/day5) |
 |  6  | PCRE                     | [`./day6/`](/day6) |
+|  7  | POSIX Shell              | [`./day7/`](/day7) |
 
 ## `check.sh`
 
