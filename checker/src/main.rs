@@ -129,13 +129,13 @@ fn count_days() -> u8 {
     25
 }
 
-async fn do_main() {
+async fn do_main() -> Status {
     let days: Result<Vec<u8>, _> = env::args().skip(1).map(|arg| arg.parse()).collect();
     let mut days = match days {
         Ok(days) => days,
         Err(_) => {
             eprintln!("Usage: check.rs [day...]");
-            std::process::exit(1);
+            return Status::Fail;
         }
     };
 
@@ -175,6 +175,8 @@ async fn do_main() {
     }
     drop(tx); // unneeded extra receiver
 
+
+    let mut overall_status = Status::Okay;
     if interactive {
         let (_col, last_row) = cursor::position().expect("failed to find cursor");
         crossterm::execute!(io::stdout(), cursor::Hide).ok();
@@ -194,7 +196,10 @@ async fn do_main() {
             #[rustfmt::skip]
             #[allow(clippy::let_unit_value)]
             let () = match update.status {
-                Status::Fail => print!("{}", "fail".red()),
+                Status::Fail => {
+                    overall_status = Status::Fail;
+                    /* output */print!("{}", "fail".red());
+                }
                 Status::Okay => print!("{}", " ok ".green()),
                 Status::Na   => print!("{}", " -- ".grey()),
             };
@@ -229,7 +234,10 @@ async fn do_main() {
                     #[rustfmt::skip]
                     #[allow(clippy::let_unit_value)]
                     let () = match part {
-                        Status::Fail => print!(" |  fail "),
+                        Status::Fail => {
+                            overall_status = Status::Fail;
+                            /* output */print!(" |  fail ");
+                        },
                         Status::Okay => print!(" |   ok  "),
                         Status::Na =>   print!(" |   --  "),
                     };
@@ -238,9 +246,14 @@ async fn do_main() {
             }
         }
     }
+
+    overall_status
 }
 
 #[tokio::main]
 async fn main() {
-    do_main().await;
+    let status = do_main().await;
+    if !matches!(status, Status::Okay) {
+        std::process::exit(1);
+    }
 }
