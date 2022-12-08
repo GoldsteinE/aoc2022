@@ -32,6 +32,8 @@
           neovim
           # Day 6
           ripgrep
+          # Day 8
+          gnat
         ];
       };
     }
