@@ -17,21 +17,18 @@ move (Point x y) DRight = Point (x + 1) y
 move (Point x y) DDown = Point x (y + 1)
 move (Point x y) DLeft = Point (x - 1) y
 
-signOf :: Int -> Int
-signOf x = if x < 0 then -1 else (if x > 0 then 1 else 0)
-
 adjustCoords :: Point -> Point -> Point
 adjustCoords (Point headX headY) (Point tailX tailY) =
   if headX == tailX && (abs (headY - tailY)) == 2
-  then Point tailX (tailY + (signOf (headY - tailY)))
+  then Point tailX (tailY + (signum (headY - tailY)))
   else
     if headY == tailY && (abs (headX - tailX)) == 2
-    then Point (tailX + (signOf (headX - tailX))) tailY
+    then Point (tailX + (signum (headX - tailX))) tailY
     else
       if (abs (headX - tailX)) > 1 || (abs (headY - tailY)) > 1
       then Point
-        (tailX + (signOf (headX - tailX)))
-        (tailY + (signOf (headY - tailY)))
+        (tailX + (signum (headX - tailX)))
+        (tailY + (signum (headY - tailY)))
       else Point tailX tailY
 
 adjustTail :: [Point] -> [Point]
