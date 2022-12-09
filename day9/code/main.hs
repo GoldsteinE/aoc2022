@@ -9,10 +9,11 @@ data Point     = Point Int Int deriving (Show, Eq, Ord)
 data Direction = U | R | D | L deriving Read
 
 move :: Point -> Direction -> Point
-move (Point x y) U = Point x (y - 1)
-move (Point x y) R = Point (x + 1) y
-move (Point x y) D = Point x (y + 1)
-move (Point x y) L = Point (x - 1) y
+move (Point x y) d = case d of
+  U -> Point x (y - 1)
+  R -> Point (x + 1) y
+  D -> Point x (y + 1)
+  L -> Point (x - 1) y
 
 adjustCoords :: Point -> Point -> Point
 adjustCoords (Point headX headY) (Point tailX tailY)
