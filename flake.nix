@@ -34,6 +34,8 @@
           ripgrep
           # Day 8
           gnat
+          # Day 9
+          ghc
         ];
       };
     }
