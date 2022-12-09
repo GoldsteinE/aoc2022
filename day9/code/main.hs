@@ -5,31 +5,24 @@ import Data.Foldable (foldl')
 import System.Environment (getArgs)
 import qualified Data.Set as Set
 
-data Point = Point Int Int
-  deriving (Show, Eq, Ord)
-
-data Direction = DUp | DRight | DDown | DLeft
-  deriving Show
+data Point     = Point Int Int deriving (Show, Eq, Ord)
+data Direction = U | R | D | L deriving Read
 
 move :: Point -> Direction -> Point
-move (Point x y) DUp = Point x (y - 1)
-move (Point x y) DRight = Point (x + 1) y
-move (Point x y) DDown = Point x (y + 1)
-move (Point x y) DLeft = Point (x - 1) y
+move (Point x y) U = Point x (y - 1)
+move (Point x y) R = Point (x + 1) y
+move (Point x y) D = Point x (y + 1)
+move (Point x y) L = Point (x - 1) y
 
 adjustCoords :: Point -> Point -> Point
-adjustCoords (Point headX headY) (Point tailX tailY) =
-  if headX == tailX && (abs (headY - tailY)) == 2
-  then Point tailX (tailY + (signum (headY - tailY)))
-  else
-    if headY == tailY && (abs (headX - tailX)) == 2
-    then Point (tailX + (signum (headX - tailX))) tailY
-    else
-      if (abs (headX - tailX)) > 1 || (abs (headY - tailY)) > 1
-      then Point
-        (tailX + (signum (headX - tailX)))
-        (tailY + (signum (headY - tailY)))
-      else Point tailX tailY
+adjustCoords (Point headX headY) (Point tailX tailY)
+  | headX == tailX  && far headY tailY = Point tailX               (shift tailY headY)
+  | headY == tailY  && far headX tailX = Point (shift tailX headX) tailY
+  | far headX tailX || far headY tailY = Point (shift tailX headX) (shift tailY headY)
+  | otherwise                          = Point tailX               tailY
+  where
+    far a b = abs (a - b) > 1
+    shift a b = a + (signum (b - a))
 
 adjustTail :: [Point] -> [Point]
 adjustTail snake = head snake : zipWith adjustCoords snake (tail snake)
@@ -39,17 +32,11 @@ moveSnake (snake, allTails) direction =
   let snake' = adjustTail $ move (head snake) direction : tail snake
   in (snake', Set.insert (last snake') allTails)
 
-parseDirection :: Char -> Direction
-parseDirection 'U' = DUp
-parseDirection 'R' = DRight
-parseDirection 'D' = DDown
-parseDirection 'L' = DLeft
-
 parseLine :: String -> [Direction]
-parseLine (c:_:num) = take (read num) $ repeat (parseDirection c)
+parseLine (c:_:num) = take (read num) $ repeat (read [c])
 
 parseInput :: String -> [Direction]
-parseInput inp = (lines inp) >>= parseLine
+parseInput inp = lines inp >>= parseLine
 
 main :: IO ()
 main = do
