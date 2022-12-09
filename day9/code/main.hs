@@ -6,7 +6,7 @@ import System.Environment (getArgs)
 import qualified Data.Set as Set
 
 data Point     = Point Int Int deriving (Show, Eq, Ord)
-data Direction = U | R | D | L deriving Read
+data Direction = U | R | D | L deriving (Show, Read)
 
 move :: Point -> Direction -> Point
 move (Point x y) d = case d of
