@@ -7,15 +7,15 @@ Any programs needed to run the code will be available via dev shell in the `flak
 
 | Day | Language                 | Link                 |
 | :-: | ------------------------ | -------------------- |
-|  1  | GNU Awk                  | [`./day1/`](/day1)   |
-|  2  | GNU sed                  | [`./day2/`](/day2)   |
-|  3  | Nix                      | [`./day3/`](/day3)   |
-|  4  | jq                       | [`./day4/`](/day4)   |
-|  5  | VimScript                | [`./day5/`](/day5)   |
-|  6  | PCRE                     | [`./day6/`](/day6)   |
-|  7  | POSIX Shell              | [`./day7/`](/day7)   |
-|  8  | Ada                      | [`./day8/`](/day8)   |
-|  9  | Haskell                  | [`./day9/`](/day9)   |
+|  1  | GNU Awk                  | [`./day01/`](/day01)   |
+|  2  | GNU sed                  | [`./day02/`](/day02)   |
+|  3  | Nix                      | [`./day03/`](/day03)   |
+|  4  | jq                       | [`./day04/`](/day04)   |
+|  5  | VimScript                | [`./day05/`](/day05)   |
+|  6  | PCRE                     | [`./day06/`](/day06)   |
+|  7  | POSIX Shell              | [`./day07/`](/day07)   |
+|  8  | Ada                      | [`./day08/`](/day08)   |
+|  9  | Haskell                  | [`./day09/`](/day09)   |
 |  10 | GNU Octave               | [`./day10/`](/day10) |
 
 ## `check.sh`

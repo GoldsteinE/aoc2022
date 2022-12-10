@@ -86,7 +86,7 @@ async fn run_part(dir_name: &Path, args: [&str; 2]) -> Status {
 
 #[rustfmt::skip]
 async fn check_day(day: u8, idx: u8, events: mpsc::UnboundedSender<State>) {
-    let dir_name = PathBuf::from(format!("day{}", day));
+    let dir_name = PathBuf::from(format!("day{:02}", day));
 
     let res = run_script("scripts/build.sh", &dir_name, [], None).await;
     events.send(State { day, idx, status: res, part: Part::Build }).ok();
@@ -121,7 +121,7 @@ async fn check_day(day: u8, idx: u8, events: mpsc::UnboundedSender<State>) {
 
 fn count_days() -> u8 {
     for x in 1..=25 {
-        if !matches!(std::fs::metadata(format!("day{x}")), Ok(m) if m.is_dir()) {
+        if !matches!(std::fs::metadata(format!("day{x:02}")), Ok(m) if m.is_dir()) {
             return x - 1;
         }
     }
