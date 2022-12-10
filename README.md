@@ -1,21 +1,22 @@
-# Advent of Code 2022: 9/25 langs
+# Advent of Code 2022: 10/25 langs
 
 I’ll try to solve this Advent of Code using different language for each day.
 Any programs needed to run the code will be available via dev shell in the `flake.nix`.
 
 ## Languages
 
-| Day | Language                 | Link               |
-| :-: | ------------------------ | ------------------ |
-|  1  | GNU Awk                  | [`./day1/`](/day1) |
-|  2  | GNU sed                  | [`./day2/`](/day2) |
-|  3  | Nix                      | [`./day3/`](/day3) |
-|  4  | jq                       | [`./day4/`](/day4) |
-|  5  | VimScript                | [`./day5/`](/day5) |
-|  6  | PCRE                     | [`./day6/`](/day6) |
-|  7  | POSIX Shell              | [`./day7/`](/day7) |
-|  8  | Ada                      | [`./day8/`](/day8) |
-|  9  | Haskell                  | [`./day9/`](/day9) |
+| Day | Language                 | Link                 |
+| :-: | ------------------------ | -------------------- |
+|  1  | GNU Awk                  | [`./day1/`](/day1)   |
+|  2  | GNU sed                  | [`./day2/`](/day2)   |
+|  3  | Nix                      | [`./day3/`](/day3)   |
+|  4  | jq                       | [`./day4/`](/day4)   |
+|  5  | VimScript                | [`./day5/`](/day5)   |
+|  6  | PCRE                     | [`./day6/`](/day6)   |
+|  7  | POSIX Shell              | [`./day7/`](/day7)   |
+|  8  | Ada                      | [`./day8/`](/day8)   |
+|  9  | Haskell                  | [`./day9/`](/day9)   |
+|  10 | GNU Octave               | [`./day10/`](/day10) |
 
 ## `check.sh`
 

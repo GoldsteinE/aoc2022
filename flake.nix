@@ -36,6 +36,8 @@
           gnat
           # Day 9
           ghc
+          # Day 10
+          octave
         ];
       };
     }
