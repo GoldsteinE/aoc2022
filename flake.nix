@@ -38,6 +38,9 @@
           ghc
           # Day 10
           octave
+          # Day 11
+          elixir
+          elixir_ls
         ];
       };
     }
