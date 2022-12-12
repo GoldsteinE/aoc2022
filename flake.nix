@@ -41,6 +41,8 @@
           # Day 11
           elixir
           elixir_ls
+          # Day 12
+          rakudo
         ];
       };
     }
