@@ -21,7 +21,7 @@
     :else (let [lhs (first left)
                 rhs (first right)
                 first-result (compare-packets lhs rhs)]
-            (if (= first-result 0) 
+            (if (zero? first-result) 
               (compare-packets (rest left) (rest right))
               first-result))))
 
@@ -41,7 +41,7 @@
 (defn enumerate
   "Add (1-based!) indices to a sequence"
   [xs]
-  (map-indexed (fn [idx el] [(+ 1 idx) el]) xs))
+  (map-indexed (fn [idx el] [(inc idx) el]) xs))
 
 (defn part1
   "Find all the packet pairs where the left is not greater than the right"
@@ -60,7 +60,7 @@
        (concat [[[2]] [[6]]])
        (sort compare-packets)
        (enumerate)
-       (filter (fn [[idx packet]]  (or (= packet [[2]]) (= packet [[6]]))))
+       (filter (fn [[idx packet]] (#{[[2]] [[6]]} packet)))
        (map first)
        (apply *)))
 
