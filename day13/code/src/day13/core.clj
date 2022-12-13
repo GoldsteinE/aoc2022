@@ -7,11 +7,11 @@
   [left right]
   (cond
     ;; Both are integers
-    (not (or (seqable? left) (seqable? right))) (compare left right)
+    (and (int? left) (int? right)) (compare left right)
     ;; Left is integer
-    (not (seqable? left)) (compare-packets (list left) right)
+    (int? left) (recur (list left) right)
     ;; Right is integer
-    (not (seqable? right)) (compare-packets left (list right))
+    (int? right) (recur left (list right))
     ;; Two empty lists
     (and (empty? left) (empty? right)) 0
     ;; Left is empty, i.e. shorter
@@ -22,7 +22,7 @@
                 rhs (first right)
                 first-result (compare-packets lhs rhs)]
             (if (zero? first-result) 
-              (compare-packets (rest left) (rest right))
+              (recur (rest left) (rest right))
               first-result))))
 
 (defn read-packet-pair
