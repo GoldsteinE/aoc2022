@@ -43,6 +43,10 @@
           elixir_ls
           # Day 12
           rakudo
+          # Day 13
+          jdk17
+          clojure
+          leiningen
         ];
       };
     }

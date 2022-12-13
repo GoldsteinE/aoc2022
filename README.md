@@ -1,4 +1,4 @@
-# Advent of Code 2022: 12/25 langs
+# Advent of Code 2022: 13/25 langs
 
 I’ll try to solve this Advent of Code using different language for each day.
 Any programs needed to run the code will be available via dev shell in the `flake.nix`.
@@ -19,6 +19,7 @@ Any programs needed to run the code will be available via dev shell in the `flak
 |  10 | GNU Octave               | [`./day10/`](/day10) |
 |  11 | Elixir                   | [`./day11/`](/day11) |
 |  12 | Raku                     | [`./day12/`](/day12) |
+|  13 | Clojure                  | [`./day13/`](/day13) |
 
 ## `check.sh`
 
