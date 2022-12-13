@@ -46,19 +46,23 @@
 (defn part1
   "Find all the packet pairs where the left is not greater than the right"
   [packet-pairs]
-  (apply + (map first (filter (fn [[idx [left right]]] (< (compare-packets left right) 1))
-                              (enumerate packet-pairs)))))
+  (->> packet-pairs
+       (enumerate)
+       (filter (fn [[idx [left right]]] (< (compare-packets left right) 1)))
+       (map first)
+       (apply +)))
 
 (defn part2
   "Locate where [[2]] and [[6]] would be in sorted packets and return product of their indices"
   [packet-pairs]
-  (let
-    [packets (concat [[[2]] [[6]]] (apply concat packet-pairs))
-     sorted-packets (sort compare-packets packets)
-     is-boundary-packet (fn [[idx packet]] (or (= packet [[2]]) (= packet [[6]])))
-     boundary-packets (filter is-boundary-packet (enumerate sorted-packets))]
-    (apply * (map first boundary-packets))))
-
+  (->> packet-pairs
+       (apply concat)
+       (concat [[[2]] [[6]]])
+       (sort compare-packets)
+       (enumerate)
+       (filter (fn [[idx packet]]  (or (= packet [[2]]) (= packet [[6]]))))
+       (map first)
+       (apply *)))
 
 (defn -main
   "Solve day 13 of Advent of Code 2022. Takes part (1 or 2) as a first command-line argument."
