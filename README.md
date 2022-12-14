@@ -20,6 +20,7 @@ Any programs needed to run the code will be available via dev shell in the `flak
 |  11 | Elixir                   | [`./day11/`](/day11) |
 |  12 | Raku                     | [`./day12/`](/day12) |
 |  13 | Clojure                  | [`./day13/`](/day13) |
+|  14 | Lua                      | [`./day14/`](/day14) |
 
 ## `check.sh`
 

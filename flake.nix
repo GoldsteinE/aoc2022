@@ -47,6 +47,8 @@
           jdk17
           clojure
           leiningen
+          # Day 14
+          lua5_4
         ];
       };
     }
