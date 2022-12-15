@@ -8,6 +8,6 @@ I chose Futhark for the promise of automatic parallelism. Turned out it was a ba
 
 2. Parsing in Futhark sounded like a nightmare, so I wasted C as well.
 
-3. The `multicore` backend is broken. It ICEs on Futhark 0.22.3 and miscompiles on the latest master.
+3. The `multicore` backend is broken. It ICEs on Futhark 0.20.5 and miscompiles on the latest master.
 
 I should’ve just used C++ or Julia.
