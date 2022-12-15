@@ -4,3 +4,4 @@ day*/build/*
 !day*/build/.keep
 checker/build/*
 !checker/build/.keep
+tmp/

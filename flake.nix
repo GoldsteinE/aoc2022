@@ -49,6 +49,8 @@
           leiningen
           # Day 14
           lua5_4
+          # Day 15
+          futhark
         ];
       };
     }
